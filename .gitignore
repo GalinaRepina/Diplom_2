@@ -56,3 +56,5 @@ logs/
 # Temporary files
 *.tmp
 *.temp__init__.py
+__init__.py
+__init__.py
