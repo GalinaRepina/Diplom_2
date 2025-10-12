@@ -1,2 +1,2 @@
 class Config:
-    BASE_URL = "https://stellarburgers.nomoreparties.site/api"
+    BASE_URL = "https://stellarburgers.education-services.ru/api"

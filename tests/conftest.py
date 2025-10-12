@@ -4,14 +4,16 @@ from data.test_data import TestData
 import allure
 
 
-@pytest.fixture
-def api():
-    return StellarBurgersApi()
+# УДАЛЯЕМ простую фикстуру api
+# @pytest.fixture
+# def api():
+#     return StellarBurgersApi()
 
 
 @pytest.fixture
-def registered_user(api):
+def registered_user():
     """Фикстура для зарегистрированного пользователя"""
+    api = StellarBurgersApi()  # Создаем объект внутри фикстуры
     user_data = TestData.get_valid_user_data()
     
     # Регистрируем пользователя
@@ -33,8 +35,9 @@ def registered_user(api):
 
 
 @pytest.fixture
-def valid_ingredients(api):
+def valid_ingredients():
     """Фикстура для получения валидных ингредиентов"""
+    api = StellarBurgersApi()  # Создаем объект внутри фикстуры
     response = api.get_ingredients()
     assert response.status_code == 200
     ingredients_data = response.json()

@@ -13,6 +13,14 @@ class TestData:
     INVALID_PASSWORD = "123"
     SHORT_PASSWORD = "12345"
     
+    # Данные для тестов заказов
+    ORDER_SUCCESS_MESSAGE = "Order created successfully"
+    ORDER_NO_INGREDIENTS_MESSAGE = "Ingredient ids must be provided"
+    ORDER_INVALID_INGREDIENTS_MESSAGE = "Internal Server Error"
+    LOGIN_INVALID_CREDENTIALS_MESSAGE = "email or password are incorrect"
+    USER_EXISTS_MESSAGE = "User already exists"
+    REQUIRED_FIELDS_MESSAGE = "required fields"
+    
     @staticmethod
     def generate_email():
         """Генерация уникального email"""
@@ -66,3 +74,13 @@ class TestData:
             "email": TestData.generate_email(),
             "password": TestData.PASSWORD
         }
+    
+    @staticmethod
+    def get_invalid_ingredients():
+        """Получить невалидные ингредиенты"""
+        return ['invalid_hash_1', 'invalid_hash_2']
+    
+    @staticmethod
+    def get_empty_ingredients():
+        """Получить пустой список ингредиентов"""
+        return []
